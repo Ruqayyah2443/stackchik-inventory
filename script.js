@@ -19,7 +19,7 @@ function addProduct(id, name, price, quantity){
         }
 
 }
-}
+
 
 function removeProduct(name) {
   let index = inventory.findIndex((product) => product.name === name);
