@@ -1,7 +1,6 @@
 const inventory = []
 
-function addProduct(id, name, price, quantity){
-    function addProduct(id, name, price, quantity){
+function addProduct(id, name, price, quantity){   
     let available = inventory.some(product => product.name === name );
         if (available){
             let index = inventory.findIndex(product => product.name === name);
