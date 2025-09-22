@@ -19,7 +19,7 @@ function addProduct(id, name, price, quantity){
         }
 
 }
-}
+
 
 function removeProduct(name) {
   let index = inventory.findIndex((product) => product.name === name);
@@ -59,9 +59,9 @@ function generateReport() {
   inventory.forEach((product, index) => {
     totalValue += product.price * product.quantity;
 
-    if (product.quantity <= product.lowStock) {
-      lowStockItems.push(product.name);
-    }
+    if (product.lowStock === true) {
+    lowStockItems.push(product.name);
+}
 
     console.log(`
             --- Product ${index + 1} ---
@@ -82,3 +82,13 @@ function generateReport() {
     }`
   );
 }
+
+// addProduct(1, "Book", 2000, 10);
+addProduct(2, "Soap", 3000, 8);
+// removeProduct(1, "Book", 2000, 8);
+
+addProduct(1, "Book", 2000, 10);
+addProduct(2, "Pen", 500, 5);
+removeProduct("Book");
+updateStock("Pen", 20);
+generateReport();
